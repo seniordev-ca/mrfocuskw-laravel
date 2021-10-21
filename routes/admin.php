@@ -70,6 +70,16 @@ Route::group(['as' => 'admin.', 'middleware' => ['auth', 'verified']], function 
         Route::get('/client-list/{id}', [App\Http\Controllers\Admin\ClientController::class, 'get'])->name('client-list.get');
         Route::post('/client-list/edit', [App\Http\Controllers\Admin\ClientController::class, 'update'])->name('client-list.edit');
         Route::delete('/client-list/{id}', [App\Http\Controllers\Admin\ClientController::class, 'destroy'])->name('client-list.delete');
+
+        //Reviews
+        Route::get('/review', [App\Http\Controllers\Admin\LayoutReviewController::class, 'index'])->name('review');
+        Route::post('/review', [App\Http\Controllers\Admin\LayoutReviewController::class, 'store'])->name('review.save');
+
+        Route::get('/review-list', [App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('review-list');
+        Route::post('/review-list', [App\Http\Controllers\Admin\ReviewController::class, 'store'])->name('review-list.add');
+        Route::get('/review-list/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'get'])->name('review-list.get');
+        Route::post('/review-list/edit', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('review-list.edit');
+        Route::delete('/review-list/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('review-list.delete');
     });
 });
 

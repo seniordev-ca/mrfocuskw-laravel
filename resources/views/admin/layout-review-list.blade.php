@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('js_after')
-    <script src="{{ asset('_admin/js/pages/layout/client-list.js') }}"></script>
+    <script src="{{ asset('_admin/js/pages/layout/review-list.js') }}"></script>
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
                     <!--begin::Page Heading-->
                     <div class="d-flex align-items-baseline flex-wrap mr-5">
                         <!--begin::Page Title-->
-                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('Clients') }}</h5>
+                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('Reviews') }}</h5>
                         <!--end::Page Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -23,7 +23,7 @@
                                 <a href="javascript:;" class="text-muted">{{ __('Layout') }}</a>
                             </li>
                             <li class="breadcrumb-item text-muted">
-                                <a href="javascript:;" class="text-muted">{{ __('Clients') }}</a>
+                                <a href="javascript:;" class="text-muted">{{ __('Reviews') }}</a>
                             </li>
                         </ul>
                         <!--end::Breadcrumb-->
@@ -43,7 +43,7 @@
                         <!--begin::Card-->
                         <div class="card card-custom gutter-b example example-compact">
                             <div class="card-header">
-                                <h3 class="card-title">{{ __('Clients') }}</h3>
+                                <h3 class="card-title">{{ __('Reviews') }}</h3>
                             </div>
                             <!--begin::Form-->
 
@@ -112,35 +112,58 @@
                                     </div>
                                 @endif
 
-                                <form class="form" action="{{ route('admin.layout.client-list.add') }}" method="POST" enctype="multipart/form-data">
+                                <form class="form" action="{{ route('admin.layout.review-list.add') }}" method="POST">
                                     @csrf
                                     <div id="add_skills" class="p-8 border-primary border-1" style="border-style: dotted;">
                                         <div class="form-group row align-items-center">
-                                            <div class="col-md-4">
-                                                <label for="txt_title">Name<span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <label for="txt_title">Client Name<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="{{ __('Name') }}"
-                                                       name="name" required id="txt_title" />
+                                                       placeholder="{{ __('Client Name') }}"
+                                                       name="client_name" required id="txt_title" />
                                                 <div class="mb-2"></div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="txt_title_ar">Name (AR)<span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <label for="txt_title_ar">Client Name (AR)<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="{{ __('Name (ar)') }}"
-                                                       name="name_ar" required id="txt_title_ar" />
+                                                       placeholder="{{ __('Client Name (ar)') }}"
+                                                       name="client_name_ar" required id="txt_title_ar" />
                                                 <div class="mb-2"></div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
+                                                <label for="txt_job">Client Job<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="{{ __('Client Name') }}"
+                                                       name="client_job" required id="txt_job" />
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="txt_job_ar">Client Job (AR)<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="{{ __('Client Name (ar)') }}"
+                                                       name="client_job_ar" required id="txt_job_ar" />
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="txt_content">Review<span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="txt_content" name="content"
+                                                          placeholder="{{ __('Review') }}"
+                                                          rows="2" required></textarea>
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="txt_content_ar">Review (AR)</label>
+                                                <textarea class="form-control" id="txt_content_ar" name="content_ar"
+                                                          placeholder="{{ __('Review (ar)') }}"
+                                                          rows="2" required></textarea>
+                                                <div class="d-md-none mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label for="txt_order">Order:</label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Order') }}"
                                                        name="order" id="txt_order" />
                                                 <div class="mb-2"></div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="image">Image:</label>
-                                                <input type="file" name="image" id="image" required class="d-block" />
-                                                <div class="d-md-none mb-2"></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -154,29 +177,31 @@
 
                                 <div class="separator separator-dashed my-8"></div>
 
-                                <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_clients">
+                                <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_reviews">
                                     <thead>
                                     <tr>
                                         <th title="Field #1">#</th>
-                                        <th title="Field #2">Name</th>
-                                        <th title="Field #3">Name (AR)</th>
-                                        <th title="Field #5">Image</th>
-                                        <th title="Field #6">Order</th>
-                                        <th title="Field #7">Actions</th>
+                                        <th title="Field #2">Client Name</th>
+                                        <th title="Field #3">Client Name (AR)</th>
+                                        <th title="Field #4">Job</th>
+                                        <th title="Field #5">Job (AR)</th>
+                                        <th title="Field #6">Content</th>
+                                        <th title="Field #7">Content (AR)</th>
+                                        <th title="Field #8">Order</th>
+                                        <th title="Field #9">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($data as $item)
+                                    @foreach($data as $skill)
                                         <tr>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->name_ar }}</td>
-                                            <td>
-                                                <div class="symbol symbol-80">
-                                                    <img alt="Client" src="{{ asset('images/clients/' . $item->image) }}"/>
-                                                </div>
-                                            </td>
-                                            <td>{{ $item->order }}</td>
+                                            <td>{{ $skill->id }}</td>
+                                            <td>{{ $skill->client_name }}</td>
+                                            <td>{{ $skill->client_name_ar }}</td>
+                                            <td>{{ $skill->client_job }}</td>
+                                            <td>{{ $skill->client_job_ar }}</td>
+                                            <td>{{ $skill->content }}</td>
+                                            <td>{{ $skill->content_ar }}</td>
+                                            <td>{{ $skill->order }}</td>
                                             <td></td>
                                         </tr>
                                     @endforeach
@@ -198,26 +223,54 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Client</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <i aria-hidden="true" class="ki ki-close"></i>
                         </button>
                     </div>
-                    <form class="form" action="{{ route('admin.layout.client-list.edit') }}" method="POST" enctype="multipart/form-data">
+                    <form class="form" action="{{ route('admin.layout.review-list.edit') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="txt_title">Title<span class="text-danger">*</span></label>
+                                <label for="txt_title">Client Name<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control"
-                                       placeholder="{{ __('Name') }}"
-                                       name="name" required id="txt_title" />
+                                       placeholder="{{ __('Client Name') }}"
+                                       name="client_name" required id="txt_title" />
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
-                                <label for="txt_title_ar">Title (AR)<span class="text-danger">*</span></label>
+                                <label for="txt_title_ar">Client Name (AR)<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control"
-                                       placeholder="{{ __('Name (ar)') }}"
-                                       name="name_ar" required id="txt_title_ar" />
+                                       placeholder="{{ __('Client Name (ar)') }}"
+                                       name="client_name_ar" required id="txt_title_ar" />
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_job">Client Job<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control"
+                                       placeholder="{{ __('Client Name') }}"
+                                       name="client_job" required id="txt_job" />
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_job_ar">Client Job (AR)<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control"
+                                       placeholder="{{ __('Client Name (ar)') }}"
+                                       name="client_job_ar" required id="txt_job_ar" />
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_content">Review<span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="txt_content" name="content"
+                                          placeholder="{{ __('Review') }}"
+                                          rows="2" required></textarea>
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_content_ar">Review (AR)<span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="txt_content_ar" name="content_ar"
+                                          placeholder="{{ __('Review (ar)') }}"
+                                          rows="2" required></textarea>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
@@ -227,14 +280,7 @@
                                        name="order" id="txt_order" />
                                 <div class="d-md-none mb-2"></div>
                             </div>
-                            <div class="form-group">
-                                <label for="image">Image:</label>
-                                <div class="symbol symbol-80 d-block">
-                                    <img src="" alt="Client" id="img_project" />
-                                </div>
-                                <input type="file" name="image" id="image" />
-                                <div class="d-md-none mb-2"></div>
-                            </div>
+
                             <input type="hidden" value="" name="id" />
                         </div>
                         <div class="modal-footer">

@@ -116,28 +116,28 @@
                                     @csrf
                                     <div id="add_skills" class="p-8 border-primary border-1" style="border-style: dotted;">
                                         <div class="form-group row align-items-center">
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <label for="txt_title">Title<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
                                                        placeholder="{{ __('Enter skill title') }}"
                                                        name="title" required id="txt_title" />
-                                                <div class="d-md-none mb-2"></div>
+                                                <div class="mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <label for="txt_title_ar">Title (AR)<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
                                                        placeholder="{{ __('Enter skill title (ar)') }}"
                                                        name="title_ar" required id="txt_title_ar" />
-                                                <div class="d-md-none mb-2"></div>
+                                                <div class="mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <label for="txt_amount">Amount (%)<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Enter amount in integer') }}"
                                                        name="amount" id="txt_amount" required />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <label for="txt_order">Order:</label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Order') }}"
