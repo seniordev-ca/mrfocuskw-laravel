@@ -160,7 +160,7 @@
     "/_admin/js/pages/features/miscellaneous/treeview.js": "/_admin/js/pages/features/miscellaneous/treeview.js",
     "/_admin/js/pages/layout/skills.js": "/_admin/js/pages/layout/skills.js",
     "/_admin/js/pages/layout/work-category.js": "/_admin/js/pages/layout/work-category.js",
-    "/_admin/js/pages/layout/work.js": "/_admin/js/pages/layout/work.js",
+    "/_admin/js/pages/layout/work-list.js": "/_admin/js/pages/layout/work-list.js",
     "/_admin/js/pages/my-script.js": "/_admin/js/pages/my-script.js",
     "/_admin/js/pages/widgets.js": "/_admin/js/pages/widgets.js",
     "/_admin/plugins/global/plugins.bundle.css": "/_admin/plugins/global/plugins.bundle.css",

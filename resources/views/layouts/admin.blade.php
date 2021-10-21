@@ -170,7 +170,7 @@
                                             <i class="menu-bullet menu-bullet-line">
                                                 <span></span>
                                             </i>
-                                            <span class="menu-text">{{ __('About us') }}</span>
+                                            <span class="menu-text">{{ __('Content') }}</span>
                                         </a>
                                     </li>
                                     <li class="menu-item menu-item-submenu {{ Route::current()->getName() == 'admin.layout.skills' ? 'menu-item-active' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
@@ -211,6 +211,14 @@
                                     </li>
                                     <li class="menu-item menu-item-submenu {{ Route::current()->getName() == 'admin.layout.work' ? 'menu-item-active' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
                                         <a href="{{route('admin.layout.work')}}" class="menu-link menu-toggle">
+                                            <i class="menu-bullet menu-bullet-line">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{ __('Content') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-submenu {{ Route::current()->getName() == 'admin.layout.work-list' ? 'menu-item-active' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
+                                        <a href="{{route('admin.layout.work-list')}}" class="menu-link menu-toggle">
                                             <i class="menu-bullet menu-bullet-line">
                                                 <span></span>
                                             </i>
@@ -443,6 +451,7 @@
 
 <script>
     var HOST_URL="{{ url('/' . env('ADMIN_PREFIX')) }}";
+    var PUBLIC_PATH = "{{ url('/') }}";
     $.ajaxSetup({
         {{--<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>--}}
         headers: {

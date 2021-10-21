@@ -17,4 +17,8 @@ class Work extends Model
         'order',
         'image',
     ];
+
+    public function category() {
+        return $this->belongsTo(WorkCategory::class, 'category_id', 'id');
+    }
 }

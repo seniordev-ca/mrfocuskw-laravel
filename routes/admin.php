@@ -33,17 +33,20 @@ Route::group(['as' => 'admin.', 'middleware' => ['auth', 'verified']], function 
         Route::post('/skills/edit', [App\Http\Controllers\Admin\LayoutSkillController::class, 'update'])->name('skills.edit');
         Route::delete('/skills/{id}', [App\Http\Controllers\Admin\LayoutSkillController::class, 'destroy'])->name('skills.delete');
 
+        Route::get('/work', [App\Http\Controllers\Admin\LayoutWorkController::class, 'index'])->name('work');
+        Route::post('/work', [App\Http\Controllers\Admin\LayoutWorkController::class, 'store'])->name('work.save');
+
         Route::get('/work-category', [App\Http\Controllers\Admin\WorkCategoryController::class, 'index'])->name('work-category');
         Route::post('/work-category', [App\Http\Controllers\Admin\WorkCategoryController::class, 'store'])->name('work-category.add');
         Route::get('/work-category/{id}', [App\Http\Controllers\Admin\WorkCategoryController::class, 'get'])->name('work-category.get');
         Route::post('/work-category/edit', [App\Http\Controllers\Admin\WorkCategoryController::class, 'update'])->name('work-category.edit');
         Route::delete('/work-category/{id}', [App\Http\Controllers\Admin\WorkCategoryController::class, 'destroy'])->name('work-category.delete');
 
-        Route::get('/work', [App\Http\Controllers\Admin\LayoutWorkController::class, 'index'])->name('work');
-        Route::post('/work', [App\Http\Controllers\Admin\LayoutWorkController::class, 'store'])->name('work.add');
-        Route::get('/work/{id}', [App\Http\Controllers\Admin\LayoutWorkController::class, 'get'])->name('work.get');
-        Route::post('/work/edit', [App\Http\Controllers\Admin\LayoutWorkController::class, 'update'])->name('work.edit');
-        Route::delete('/work/{id}', [App\Http\Controllers\Admin\LayoutWorkController::class, 'destroy'])->name('work.delete');
+        Route::get('/work-list', [App\Http\Controllers\Admin\WorkController::class, 'index'])->name('work-list');
+        Route::post('/work-list', [App\Http\Controllers\Admin\WorkController::class, 'store'])->name('work-list.add');
+        Route::get('/work-list/{id}', [App\Http\Controllers\Admin\WorkController::class, 'get'])->name('work-list.get');
+        Route::post('/work-list/edit', [App\Http\Controllers\Admin\WorkController::class, 'update'])->name('work-list.edit');
+        Route::delete('/work-list/{id}', [App\Http\Controllers\Admin\WorkController::class, 'destroy'])->name('work-list.delete');
     });
 });
 

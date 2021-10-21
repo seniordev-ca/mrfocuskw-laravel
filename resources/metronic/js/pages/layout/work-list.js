@@ -1,7 +1,7 @@
 'use strict';
 // Class definition
 
-var WorksPage = function() {
+var WorkListPage = function() {
     // Private functions
 
     // demo initializer
@@ -84,7 +84,7 @@ var WorksPage = function() {
                     $(".page-loader").addClass("bg-dark-o-50");
                     $("#kt_body").addClass("page-loading");
 
-                    var sendUri = HOST_URL + "/layout/work/"+id ;
+                    var sendUri = HOST_URL + "/layout/work-list/"+id ;
                     $.ajax({
                         url: sendUri,
                         method: 'DELETE',
@@ -131,16 +131,18 @@ var WorksPage = function() {
             $(".page-loader").addClass("bg-dark-o-50");
             $("#kt_body").addClass("page-loading");
 
-            var sendUri = HOST_URL + "/layout/work/"+id ;
+            var sendUri = HOST_URL + "/layout/work-list/"+id ;
             $.ajax({
                 url: sendUri,
                 method: 'GET',
                 complete: function (xhr, status) {
                     if (xhr.status === 200 && xhr.responseJSON.data) {
                         const data = xhr.responseJSON.data;
-                        $("#editModal [name=project]").val(data.project);
+                        $("#editModal [name=project_name]").val(data.project_name);
                         $("#editModal [name=project_name_ar]").val(data.project_name_ar);
                         $("#editModal [name=order]").val(data.order ?? '');
+                        $("#editModal [name=category_id]").val(data.category_id);
+                        $("#img_project").attr("src", PUBLIC_PATH + "/images/works/" + data.image);
                         $("#editModal [name=id]").val(data.id);
                         $("#editModal").modal("show");
                     } else {
@@ -164,5 +166,5 @@ var WorksPage = function() {
 }();
 
 jQuery(document).ready(function() {
-    WorksPage.init();
+    WorkListPage.init();
 });

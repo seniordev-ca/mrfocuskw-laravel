@@ -1,12 +1,12 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-/*!****************************************************!*\
-  !*** ./resources/metronic/js/pages/layout/work.js ***!
-  \****************************************************/
+/*!*********************************************************!*\
+  !*** ./resources/metronic/js/pages/layout/work-list.js ***!
+  \*********************************************************/
  // Class definition
 
-var WorksPage = function () {
+var WorkListPage = function () {
   // Private functions
   // demo initializer
   var demo = function demo() {
@@ -82,7 +82,7 @@ var WorksPage = function () {
         if (result.value) {
           $(".page-loader").addClass("bg-dark-o-50");
           $("#kt_body").addClass("page-loading");
-          var sendUri = HOST_URL + "/layout/work/" + id;
+          var sendUri = HOST_URL + "/layout/work-list/" + id;
           $.ajax({
             url: sendUri,
             method: 'DELETE',
@@ -125,7 +125,7 @@ var WorksPage = function () {
       var id = $(this).data('id');
       $(".page-loader").addClass("bg-dark-o-50");
       $("#kt_body").addClass("page-loading");
-      var sendUri = HOST_URL + "/layout/work/" + id;
+      var sendUri = HOST_URL + "/layout/work-list/" + id;
       $.ajax({
         url: sendUri,
         method: 'GET',
@@ -160,7 +160,7 @@ var WorksPage = function () {
 }();
 
 jQuery(document).ready(function () {
-  WorksPage.init();
+  WorkListPage.init();
 });
 /******/ })()
 ;
