@@ -60,6 +60,16 @@ Route::group(['as' => 'admin.', 'middleware' => ['auth', 'verified']], function 
         Route::get('/service-list/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'get'])->name('service-list.get');
         Route::post('/service-list/edit', [App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('service-list.edit');
         Route::delete('/service-list/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('service-list.delete');
+
+        //Clients
+        Route::get('/client', [App\Http\Controllers\Admin\LayoutClientController::class, 'index'])->name('client');
+        Route::post('/client', [App\Http\Controllers\Admin\LayoutClientController::class, 'store'])->name('client.save');
+
+        Route::get('/client-list', [App\Http\Controllers\Admin\ClientController::class, 'index'])->name('client-list');
+        Route::post('/client-list', [App\Http\Controllers\Admin\ClientController::class, 'store'])->name('client-list.add');
+        Route::get('/client-list/{id}', [App\Http\Controllers\Admin\ClientController::class, 'get'])->name('client-list.get');
+        Route::post('/client-list/edit', [App\Http\Controllers\Admin\ClientController::class, 'update'])->name('client-list.edit');
+        Route::delete('/client-list/{id}', [App\Http\Controllers\Admin\ClientController::class, 'destroy'])->name('client-list.delete');
     });
 });
 

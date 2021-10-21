@@ -158,6 +158,7 @@
     "/_admin/js/pages/features/miscellaneous/sweetalert2.js": "/_admin/js/pages/features/miscellaneous/sweetalert2.js",
     "/_admin/js/pages/features/miscellaneous/toastr.js": "/_admin/js/pages/features/miscellaneous/toastr.js",
     "/_admin/js/pages/features/miscellaneous/treeview.js": "/_admin/js/pages/features/miscellaneous/treeview.js",
+    "/_admin/js/pages/layout/client-list.js": "/_admin/js/pages/layout/client-list.js",
     "/_admin/js/pages/layout/services.js": "/_admin/js/pages/layout/services.js",
     "/_admin/js/pages/layout/skills.js": "/_admin/js/pages/layout/skills.js",
     "/_admin/js/pages/layout/work-category.js": "/_admin/js/pages/layout/work-category.js",

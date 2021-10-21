@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('js_after')
-    <script src="{{ asset('_admin/js/pages/layout/work-list.js') }}"></script>
+    <script src="{{ asset('_admin/js/pages/layout/client-list.js') }}"></script>
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
                     <!--begin::Page Heading-->
                     <div class="d-flex align-items-baseline flex-wrap mr-5">
                         <!--begin::Page Title-->
-                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('Works') }}</h5>
+                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('Clients') }}</h5>
                         <!--end::Page Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -23,7 +23,7 @@
                                 <a href="javascript:;" class="text-muted">{{ __('Layout') }}</a>
                             </li>
                             <li class="breadcrumb-item text-muted">
-                                <a href="javascript:;" class="text-muted">{{ __('Works') }}</a>
+                                <a href="javascript:;" class="text-muted">{{ __('Clients') }}</a>
                             </li>
                         </ul>
                         <!--end::Breadcrumb-->
@@ -43,7 +43,7 @@
                         <!--begin::Card-->
                         <div class="card card-custom gutter-b example example-compact">
                             <div class="card-header">
-                                <h3 class="card-title">{{ __('Works') }}</h3>
+                                <h3 class="card-title">{{ __('Clients') }}</h3>
                             </div>
                             <!--begin::Form-->
 
@@ -112,43 +112,34 @@
                                     </div>
                                 @endif
 
-                                <form class="form" action="{{ route('admin.layout.work-list.add') }}" method="POST" enctype="multipart/form-data">
+                                <form class="form" action="{{ route('admin.layout.client-list.add') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div id="add_skills" class="p-8 border-primary border-1" style="border-style: dotted;">
                                         <div class="form-group row align-items-center">
-                                            <div class="col-md-3">
-                                                <label for="txt_title">Project<span class="text-danger">*</span></label>
+                                            <div class="col-md-4">
+                                                <label for="txt_title">Name<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="{{ __('Project') }}"
-                                                       name="project_name" required id="txt_title" />
+                                                       placeholder="{{ __('Name') }}"
+                                                       name="name" required id="txt_title" />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <label for="txt_title_ar">Project (AR)<span class="text-danger">*</span></label>
+                                            <div class="col-md-4">
+                                                <label for="txt_title_ar">Name (AR)<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
-                                                       placeholder="{{ __('Project (ar)') }}"
-                                                       name="project_name_ar" required id="txt_title_ar" />
+                                                       placeholder="{{ __('Name (ar)') }}"
+                                                       name="name_ar" required id="txt_title_ar" />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <label for="sel_category">Category:</label>
-                                                <select class="form-control" name="category_id" id="sel_category">
-                                                    @foreach($category_list as $item)
-                                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <div class="d-md-none mb-2"></div>
-                                            </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label for="txt_order">Order:</label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Order') }}"
                                                        name="order" id="txt_order" />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <label for="image">Image:</label>
-                                                <input type="file" name="image" id="image" class="d-block" required />
+                                                <input type="file" name="image" id="image" required class="d-block" />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
                                         </div>
@@ -163,13 +154,12 @@
 
                                 <div class="separator separator-dashed my-8"></div>
 
-                                <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_works">
+                                <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable_clients">
                                     <thead>
                                     <tr>
                                         <th title="Field #1">#</th>
-                                        <th title="Field #2">Project Name</th>
-                                        <th title="Field #3">Project Name (AR)</th>
-                                        <th title="Field #4">Category</th>
+                                        <th title="Field #2">Name</th>
+                                        <th title="Field #3">Name (AR)</th>
                                         <th title="Field #5">Image</th>
                                         <th title="Field #6">Order</th>
                                         <th title="Field #7">Actions</th>
@@ -179,12 +169,11 @@
                                     @foreach($data as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
-                                            <td>{{ $item->project_name }}</td>
-                                            <td>{{ $item->project_name_ar }}</td>
-                                            <td>{{ $item->category->name }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->name_ar }}</td>
                                             <td>
                                                 <div class="symbol symbol-80">
-                                                    <img alt="Project" src="{{ asset('images/works/' . $item->image) }}"/>
+                                                    <img alt="Client" src="{{ asset('images/clients/' . $item->image) }}"/>
                                                 </div>
                                             </td>
                                             <td>{{ $item->order }}</td>
@@ -209,35 +198,26 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Work</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Client</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <i aria-hidden="true" class="ki ki-close"></i>
                         </button>
                     </div>
-                    <form class="form" action="{{ route('admin.layout.work-list.edit') }}" method="POST" enctype="multipart/form-data">
+                    <form class="form" action="{{ route('admin.layout.client-list.edit') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="txt_title">Title<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control"
                                        placeholder="{{ __('Name') }}"
-                                       name="project_name" required id="txt_title" />
+                                       name="name" required id="txt_title" />
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
                                 <label for="txt_title_ar">Title (AR)<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control"
                                        placeholder="{{ __('Name (ar)') }}"
-                                       name="project_name_ar" required id="txt_title_ar" />
-                                <div class="d-md-none mb-2"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="sel_category">Category:</label>
-                                <select class="form-control" name="category_id" id="sel_category">
-                                    @foreach($category_list as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                    @endforeach
-                                </select>
+                                       name="name_ar" required id="txt_title_ar" />
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
@@ -250,7 +230,7 @@
                             <div class="form-group">
                                 <label for="image">Image:</label>
                                 <div class="symbol symbol-80 d-block">
-                                    <img src="" alt="Project" id="img_project" />
+                                    <img src="" alt="Client" id="img_project" />
                                 </div>
                                 <input type="file" name="image" id="image" />
                                 <div class="d-md-none mb-2"></div>

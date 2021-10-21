@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             HomeLayoutSeeder::class,
             AboutusLayoutSeeder::class,
             WorkLayoutSeeder::class,
-            ServiceLayoutSeeder::class
+            ServiceLayoutSeeder::class,
+            ClientLayoutSeeder::class
         ]);
     }
 }
