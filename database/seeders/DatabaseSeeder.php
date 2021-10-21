@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\WorkLayout;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HomeLayoutSeeder::class,
             AboutusLayoutSeeder::class,
-            WorkLayout::class,
+            WorkLayoutSeeder::class,
+            ServiceLayoutSeeder::class
         ]);
     }
 }

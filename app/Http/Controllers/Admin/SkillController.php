@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 
-class LayoutSkillController extends Controller
+class SkillController extends Controller
 {
 
     public function index()
