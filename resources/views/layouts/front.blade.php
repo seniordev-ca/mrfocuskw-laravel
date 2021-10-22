@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
 
-    <title>{{ config('app.name', 'MrfocusKW') }}</title>
+    <title>{{ config('app.name', $general->brand_name) }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="screen">
@@ -33,27 +33,27 @@
 <div class="menu">
     <span class="close-menu icon-cross2 right-boxed"></span>
     <div class="menu-lang right-boxed">
-        <a href="" class="active">Eng</a>
-        <a href="">Ara</a>
+        <a href="{{ route('set-locale', 'en') }}" class="{{ session('locale') == 'en' ? 'active' : '' }}">Eng</a>
+        <a href="{{ route('set-locale', 'ar') }}" class="{{ session('locale') == 'ar' ? 'active' : '' }}">Ara</a>
     </div>
     <ul class="menu-list right-boxed">
         <li  data-menuanchor="page1">
-            <a  href="#page1">Home</a>
+            <a  href="#page1">{{ __('Home') }}</a>
         </li>
         <li  data-menuanchor="page2">
-            <a href="#page2">About us</a>
+            <a href="#page2">{{ __('About us') }}</a>
         </li>
         <li  data-menuanchor="page3">
-            <a href="#page3">Projects</a>
+            <a href="#page3">{{ __('Projects') }}</a>
         </li>
         <li  data-menuanchor="page4">
-            <a href="#page4">Services</a>
+            <a href="#page4">{{ __('Services') }}</a>
         </li>
         <li  data-menuanchor="page6">
-            <a href="#page6">Reviews</a>
+            <a href="#page6">{{ __('Reviews') }}</a>
         </li>
         <li  data-menuanchor="page7">
-            <a href="#page7">Contact</a>
+            <a href="#page7">{{ __('Contact') }}</a>
         </li>
     </ul>
     <div class="menu-footer right-boxed">
@@ -64,7 +64,7 @@
             <a href="" class="icon ion-social-linkedin"></a>
             <a href="" class="icon ion-social-dribbble-outline"></a>
         </div>
-        <div class="copy">© MrfocusKW <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by MrfocusKW</div>
+        <div class="copy">© {{ $general->brand_name }} <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by MrfocusKW</div>
     </div>
 </div>
 
@@ -94,11 +94,11 @@
         <a href="" class="icon ion-social-dribbble-outline"></a>
     </div>
 </header>
-<div class="copy-bottom white boxed">© Jonny <?php echo date("Y"); ?>.</div>
+<div class="copy-bottom white boxed">© {{ $general->brand_name }} <?php echo date("Y"); ?>.</div>
 <div class="lang-bottom white boxed">
     <div class="menu-lang">
-        <a href="" class="active">Eng</a>
-        <a href="">Ara</a>
+        <a href="{{ route('set-locale', 'en') }}" class="{{ session('locale') == 'en' ? 'active' : '' }}">Eng</a>
+        <a href="{{ route('set-locale', 'ar') }}" class="{{ session('locale') == 'ar' ? 'active' : '' }}">Ara</a>
     </div>
 </div>
 
