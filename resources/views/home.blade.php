@@ -4,7 +4,7 @@
         <div class="scrollable-content">
             <div class="vertical-centred">
                 <div class="boxed boxed-inner">
-                    <div class="vertical-title hidden-xs hidden-sm"><span>Introduce</span></div>
+                    <div class="vertical-title hidden-xs hidden-sm"><span>{{ $home->sidebar }}</span></div>
                     <div class="boxed">
                         <div class="container">
                             <div class="intro">

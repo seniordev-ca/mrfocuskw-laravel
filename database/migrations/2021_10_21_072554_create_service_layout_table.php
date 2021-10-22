@@ -23,6 +23,7 @@ class CreateServiceLayoutTable extends Migration
             $table->text('content_ar')->nullable();
             $table->string('highlight')->nullable();
             $table->string('highlight_ar')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

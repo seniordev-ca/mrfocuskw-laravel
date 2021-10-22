@@ -4,6 +4,10 @@
     <div class="pagepiling">
         @include('home')
         @include('about')
-        @include('works')
+        @include('projects')
+        @include('services')
+        @include('clients')
+        @include('reviews')
+        @include('contact')
     </div>
 @endsection

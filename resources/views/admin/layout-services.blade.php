@@ -42,7 +42,7 @@
                                 <h3 class="card-title">{{ __('Services') }}</h3>
                             </div>
                             <!--begin::Form-->
-                            <form class="form" action="{{ route('admin.layout.service.save') }}" method="POST">
+                            <form class="form" action="{{ route('admin.layout.service.save') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     @if ($errors->any())
@@ -164,6 +164,15 @@
                                                    value="{{ $data->highlight_ar }}" id="txt_highlight_ar"
                                                    name="highlight_ar"/>
                                         </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="logo">{{ __('Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Project" src="{{ asset('images/me/' . $data->img) }}" />
+                                        </div>
+                                        <input type="file" name="img" id="logo" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
                                     </div>
 
                                 </div>

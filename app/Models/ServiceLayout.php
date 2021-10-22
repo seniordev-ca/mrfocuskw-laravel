@@ -19,5 +19,6 @@ class ServiceLayout extends Model
         'content_ar',
         'highlight',
         'highlight_ar',
+        'img'
     ];
 }

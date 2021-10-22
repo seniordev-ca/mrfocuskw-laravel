@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'MrfocusKW') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="screen">
@@ -34,15 +34,14 @@
     <span class="close-menu icon-cross2 right-boxed"></span>
     <div class="menu-lang right-boxed">
         <a href="" class="active">Eng</a>
-        <a href="">Fra</a>
-        <a href="">Ger</a>
+        <a href="">Ara</a>
     </div>
     <ul class="menu-list right-boxed">
         <li  data-menuanchor="page1">
             <a  href="#page1">Home</a>
         </li>
         <li  data-menuanchor="page2">
-            <a href="#page2">Specialization</a>
+            <a href="#page2">About us</a>
         </li>
         <li  data-menuanchor="page3">
             <a href="#page3">Projects</a>
@@ -65,7 +64,7 @@
             <a href="" class="icon ion-social-linkedin"></a>
             <a href="" class="icon ion-social-dribbble-outline"></a>
         </div>
-        <div class="copy">© Jonny 2017. All Rights Reseverd<br> Design by LoganCee</div>
+        <div class="copy">© MrfocusKW <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by MrfocusKW</div>
     </div>
 </div>
 
@@ -81,10 +80,10 @@
 
     <a class="brand" href="#">
         <img class="brand-img" alt="" src="images/brand.png">
-        <div class="brand-info">
-            <div class="brand-name">Jonny</div>
-            <div class="brand-text">creative template</div>
-        </div>
+{{--        <div class="brand-info">--}}
+{{--            <div class="brand-name">Jonny</div>--}}
+{{--            <div class="brand-text">creative template</div>--}}
+{{--        </div>--}}
     </a>
 
     <div class="social-list hidden-xs">
@@ -95,12 +94,11 @@
         <a href="" class="icon ion-social-dribbble-outline"></a>
     </div>
 </header>
-<div class="copy-bottom white boxed">© Jonny 2017.</div>
+<div class="copy-bottom white boxed">© Jonny <?php echo date("Y"); ?>.</div>
 <div class="lang-bottom white boxed">
     <div class="menu-lang">
         <a href="" class="active">Eng</a>
-        <a href="">Fra</a>
-        <a href="">Ger</a>
+        <a href="">Ara</a>
     </div>
 </div>
 

@@ -15,10 +15,10 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->text('client_name')->nullable();
-            $table->text('client_name_ar')->nullable();
-            $table->text('client_job')->nullable();
-            $table->text('client_job_ar')->nullable();
+            $table->string('client_name')->nullable();
+            $table->string('client_name_ar')->nullable();
+            $table->string('client_job')->nullable();
+            $table->string('client_job_ar')->nullable();
             $table->text('content')->nullable();
             $table->text('content_ar')->nullable();
             $table->integer('order')->nullable();

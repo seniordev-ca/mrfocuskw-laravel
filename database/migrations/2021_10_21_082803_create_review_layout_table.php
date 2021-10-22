@@ -15,8 +15,8 @@ class CreateReviewLayoutTable extends Migration
     {
         Schema::create('review_layout', function (Blueprint $table) {
             $table->id();
-            $table->text('sidebar')->nullable();
-            $table->text('sidebar_ar')->nullable();
+            $table->string('sidebar')->nullable();
+            $table->string('sidebar_ar')->nullable();
             $table->text('content')->nullable();
             $table->text('content_ar')->nullable();
             $table->timestamps();

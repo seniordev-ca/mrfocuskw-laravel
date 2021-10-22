@@ -16,9 +16,9 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->text('project_name')->nullable();
-            $table->text('project_name_ar')->nullable();
-            $table->text('image')->nullable();
+            $table->string('project_name')->nullable();
+            $table->string('project_name_ar')->nullable();
+            $table->string('image')->nullable();
             $table->integer('order')->nullable();
             $table->foreign('category_id')
                 ->references('id')->on('work_category')

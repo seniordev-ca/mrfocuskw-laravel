@@ -11,7 +11,7 @@
                     <!--begin::Page Heading-->
                     <div class="d-flex align-items-baseline flex-wrap mr-5">
                         <!--begin::Page Title-->
-                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('Contacts') }}</h5>
+                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{ __('General') }}</h5>
                         <!--end::Page Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -36,10 +36,10 @@
                         <!--begin::Card-->
                         <div class="card card-custom gutter-b example example-compact">
                             <div class="card-header">
-                                <h3 class="card-title">{{ __('Contacts') }}</h3>
+                                <h3 class="card-title">{{ __('General') }}</h3>
                             </div>
                             <!--begin::Form-->
-                            <form class="form" action="{{ route('admin.layout.contact.save') }}" method="POST">
+                            <form class="form" action="{{ route('admin.home.save') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     @if ($errors->any())
@@ -92,50 +92,37 @@
                                         </div>
                                     @endif
                                     <div class="form-group">
-                                            <label for="txt_sidebar">{{ __('Google') }}
-                                                <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="{{ __('Google') }}"
-                                                   id="txt_sidebar" name="google" value="{{ $data->google }}"/>
-                                            <div class="d-md-none mb-2"></div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txt_facebook">{{ __('Facebook') }}
+                                        <label for="txt_brand">{{ __('Brand Name') }}
                                             <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Facebook') }}"
-                                               id="txt_facebook" name="facebook" value="{{ $data->facebook }}"/>
+                                        <input type="text" class="form-control" placeholder="{{ __('Brand Name') }}"
+                                               id="txt_brand" name="brand_name" value="{{ $data->brand_name }}"/>
                                         <div class="d-md-none mb-2"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="txt_instagram">{{ __('Instagram') }}
-                                            <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Instagram') }}"
-                                               id="txt_instagram" name="instagram" value="{{ $data->instagram }}"/>
+                                        <label for="logo">{{ __('Logo') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Project" src="{{ asset('images/logo/' . $data->logo) }}" />
+                                        </div>
+                                        <input type="file" name="logo" id="logo" class="d-block" />
                                         <div class="d-md-none mb-2"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="txt_linkedin">{{ __('Linkedin') }}
-                                            <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Linkedin') }}"
-                                               id="txt_linkedin" name="linkedin" value="{{ $data->linkedin }}"/>
+                                        <label for="file_home">{{ __('Home BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Project" src="{{ asset('images/bg/' . $data->home_bg) }}" />
+                                        </div>
+                                        <input type="file" name="home_bg" id="file_home" class="d-block" />
                                         <div class="d-md-none mb-2"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="txt_twitter">{{ __('Twitter') }}
-                                            <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Twitter') }}"
-                                               id="txt_twitter" name="twitter" value="{{ $data->twitter }}"/>
-                                        <div class="d-md-none mb-2"></div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txt_dribble">{{ __('Dribble') }}
-                                            <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Dribble') }}"
-                                               id="txt_dribble" name="dribble" value="{{ $data->dribble }}"/>
+                                        <label for="file_review">{{ __('Review BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Project" src="{{ asset('images/bg/' . $data->review_bg) }}" />
+                                        </div>
+                                        <input type="file" name="review_bg" id="file_review" class="d-block" />
                                         <div class="d-md-none mb-2"></div>
                                     </div>
                                 </div>

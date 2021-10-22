@@ -17,7 +17,6 @@ class LayoutAboutUsController extends Controller
         ]);
     }
 
-
     public function store(Request $request)
     {
         AboutUs::first()->update($request->all());
