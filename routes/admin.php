@@ -80,6 +80,10 @@ Route::group(['as' => 'admin.', 'middleware' => ['auth', 'verified']], function 
         Route::get('/review-list/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'get'])->name('review-list.get');
         Route::post('/review-list/edit', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('review-list.edit');
         Route::delete('/review-list/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('review-list.delete');
+
+        //Home
+        Route::get('/contact', [App\Http\Controllers\Admin\LayoutContactsController::class, 'index'])->name('contact');
+        Route::post('/contact', [App\Http\Controllers\Admin\LayoutContactsController::class, 'store'])->name('contact.save');
     });
 });
 
