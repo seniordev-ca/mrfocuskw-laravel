@@ -31,9 +31,16 @@ var KTDatatableHtmlTableDemo = function () {
           hidden: 'sm'
         }
       }, {
+        field: 'Client Job (AR)',
+        title: 'Client Job (AR)',
+        responsive: {
+          visible: 'md',
+          hidden: 'sm'
+        }
+      }, {
         field: 'Actions',
         title: 'Actions',
-        autoHide: false,
+        // autoHide: false,
         // callback function support for column rendering
         template: function template(row) {
           return '\

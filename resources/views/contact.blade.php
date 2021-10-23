@@ -3,13 +3,13 @@
         <div class="scrollable-content">
             <div class="vertical-centred">
                 <div class="boxed boxed-inner">
-                    <div class="vertical-title text-dark hidden-xs hidden-sm"><span>contact</span></div>
+                    <div class="vertical-title text-dark hidden-xs hidden-sm"><span>{{ __('Contact') }}</span></div>
                     <div class="boxed">
                         <div class="container">
                             <div class="intro overflow-hidden">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2 class="title-uppercase">Get In Touch</h2>
+                                        <h2 class="title-uppercase">{{ __('Get In Touch') }}</h2>
                                         <div class="contact-info">
                                             <form class="js-form" novalidate="novalidate">
                                                 <div class="row">
@@ -25,7 +25,7 @@
                                                     <div class="form-group col-sm-12">
                                                         <textarea name="message" required="" placeholder="Message*" aria-required="true"></textarea>
                                                     </div>
-                                                    <div class="col-sm-12"><button type="submit" class="btn">Post Comment</button></div>
+                                                    <div class="col-sm-12"><button type="submit" class="btn" id="btn_submit">Post Comment</button></div>
                                                 </div>
                                             </form>
                                         </div>

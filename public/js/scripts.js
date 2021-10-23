@@ -1,9 +1,9 @@
 ﻿( function($) {
   'use strict';
 
-    
+
    /*-------------------------------------------------------------------------------
-	  Detect mobile device 
+	  Detect mobile device
 	-------------------------------------------------------------------------------*/
 
 	var navbar=$('.js-navbar:not(.navbar-fixed)');
@@ -16,7 +16,7 @@
 
 
 	/*-------------------------------------------------------------------------------
-	  Navbar 
+	  Navbar
 	-------------------------------------------------------------------------------*/
 
 
@@ -36,7 +36,7 @@
 
 	navbar.on('affixed-top.bs.affix', function() {
 	  	navbar.removeClass('animated slideInDown');
-	  	
+
 	});
 
 	$('.nav-mobile-list li a[href="#"]').on('click',function(){
@@ -77,7 +77,7 @@
 		        },
 		        720:{
 		            items:1,
-		            
+
 		        },
 		        1280:{
 		            items:1
@@ -97,7 +97,7 @@
 		        },
 		        720:{
 		            items:1,
-		            
+
 		        },
 		        1280:{
 		            items:1
@@ -118,7 +118,7 @@
 
 
 	/*-------------------------------------------------------------------------------
-	  Full screen sections 
+	  Full screen sections
 	-------------------------------------------------------------------------------*/
 
 
@@ -136,14 +136,14 @@
 	            else{
 	            	$('.navbar').addClass('navbar-white');
 	            }
-	            
+
   			}
 		});
 
 
 
 		/*-------------------------------------------------------------------------------
-		   Scroll into sections 
+		   Scroll into sections
 		/-------------------------------------------------------------------------------*/
 
 
@@ -175,7 +175,7 @@
 		$('.pp-nav-down').on('click', function(){
 			$.fn.pagepiling.moveSectionDown();
 		});
-    } 
+    }
 
 
 
@@ -203,18 +203,21 @@
 			$(this).validate({
 				errorClass: 'error wobble-error',
 			    submitHandler: function(form){
+                    $("#btn_submit").attr('disabled', 'disabled');
 		        	$.ajax({
 			            type: "POST",
-			            url:"mail.php",
+			            url:"/contact",
 			            data: $(form).serialize(),
 			            success: function() {
 			            	$('#error').modal('hide');
 		                	$('#success').modal('show');
+                            $("#btn_submit").removeAttr('disabled');
 		                },
 
 		                error: function(){
 		                	$('#success').modal('hide');
 			                $('#error').modal('show');
+                            $("#btn_submit").removeAttr('disabled');
 			            }
 			        });
 			    }
@@ -222,8 +225,8 @@
 		});
 	}
 
-	
-	
+
+
 
 
 })(jQuery);

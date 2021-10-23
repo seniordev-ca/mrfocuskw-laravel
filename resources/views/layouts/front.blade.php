@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="We are MrFocus. Bridging the gap between traditional advertising and the digital age. We help you to understand the best way to position yourself as a company, brand, person, event, or agency. We then take that knowledge to create amazing engaging, creative content that reaches your audience in extremely effective ways using the right channels.">
+    <meta name="author" content="Mrfocuskw">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     <title>{{ config('app.name', $general->brand_name) }}</title>
 
@@ -58,13 +58,23 @@
     </ul>
     <div class="menu-footer right-boxed">
         <div class="social-list">
-            <a href="" class="icon ion-social-twitter"></a>
-            <a href="" class="icon ion-social-facebook"></a>
-            <a href="" class="icon ion-social-googleplus"></a>
-            <a href="" class="icon ion-social-linkedin"></a>
-            <a href="" class="icon ion-social-dribbble-outline"></a>
+            @if(isset($contact->twitter))
+                <a href="{{ $contact->twitter }}" class="icon ion-social-twitter" target="_blank"></a>
+            @endif
+            @if(isset($contact->facebook))
+                <a href="{{ $contact->facebook }}" class="icon ion-social-facebook"></a>
+            @endif
+            @if(isset($contact->google))
+                <a href="mailto:{{ $contact->google }}" class="icon ion-social-googleplus"></a>
+            @endif
+            @if(isset($contact->linkedin))
+                <a href="{{ $contact->linkedin }}" class="icon ion-social-linkedin"></a>
+            @endif
+            @if(isset($contact->dribble))
+                <a href="{{ $contact->dribble }}" class="icon ion-social-dribbble-outline"></a>
+            @endif
         </div>
-        <div class="copy">© {{ $general->brand_name }} <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by MrfocusKW</div>
+        <div class="copy">© {{ $general->brand_name }} <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by Mrfocuskw</div>
     </div>
 </div>
 
@@ -79,19 +89,29 @@
     </button>
 
     <a class="brand" href="#">
-        <img class="brand-img" alt="" src="images/brand.png">
+        <img class="brand-img" alt="" src="{{ asset('images/logo/' . $general->logo) }}">
 {{--        <div class="brand-info">--}}
-{{--            <div class="brand-name">Jonny</div>--}}
+{{--            <div class="brand-name">{{ $general->brand_name }}</div>--}}
 {{--            <div class="brand-text">creative template</div>--}}
 {{--        </div>--}}
     </a>
 
     <div class="social-list hidden-xs">
-        <a href="" class="icon ion-social-twitter"></a>
-        <a href="" class="icon ion-social-facebook"></a>
-        <a href="" class="icon ion-social-googleplus"></a>
-        <a href="" class="icon ion-social-linkedin"></a>
-        <a href="" class="icon ion-social-dribbble-outline"></a>
+        @if(isset($contact->twitter))
+            <a href="{{ $contact->twitter }}" class="icon ion-social-twitter" target="_blank"></a>
+        @endif
+        @if(isset($contact->facebook))
+            <a href="{{ $contact->facebook }}" class="icon ion-social-facebook" target="_blank"></a>
+        @endif
+        @if(isset($contact->google))
+            <a href="mailto:{{ $contact->google }}" class="icon ion-social-googleplus"></a>
+        @endif
+        @if(isset($contact->linkedin))
+            <a href="{{ $contact->linkedin }}" class="icon ion-social-linkedin" target="_blank"></a>
+        @endif
+        @if(isset($contact->dribble))
+            <a href="{{ $contact->dribble }}" class="icon ion-social-dribbble-outline" target="_blank"></a>
+        @endif
     </div>
 </header>
 <div class="copy-bottom white boxed">© {{ $general->brand_name }} <?php echo date("Y"); ?>.</div>
@@ -145,5 +165,12 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/scripts.js') }}"></script>
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 </body>
 </html>

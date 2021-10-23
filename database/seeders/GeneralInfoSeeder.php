@@ -15,7 +15,7 @@ class GeneralInfoSeeder extends Seeder
     public function run()
     {
         GeneralInfo::create([
-            'brand_name' => 'MrfocusKW'
+            'brand_name' => 'Mrfocuskw'
         ]);
     }
 }

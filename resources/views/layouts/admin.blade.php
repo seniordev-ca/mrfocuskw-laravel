@@ -3,8 +3,8 @@
 <!--begin::Head-->
 <head>
     <meta charset="utf-8" />
-    <title>MrFocusKW</title>
-    <meta name="description" content="MrfocusKW Admin Panel" />
+    <title>MrFocuskw</title>
+    <meta name="description" content="Mrfocuskw Admin Panel" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- CSRF Token -->
@@ -24,7 +24,7 @@
     <link href="{{ asset('_admin/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('_admin/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="{{ asset('_admin/media/logos/favicon.ico') }}" />
+{{--    <link rel="shortcut icon" href="{{ asset('_admin/media/logos/favicon.ico') }}" />--}}
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -431,7 +431,7 @@
                     <!--begin::Copyright-->
                     <div class="text-dark order-2 order-md-1">
                         <span class="text-muted font-weight-bold mr-2"><?php echo date("Y"); ?>©</span>
-                        <a href="#" target="_blank" class="text-dark-75 text-hover-primary">MrfocusKW</a>
+                        <a href="#" target="_blank" class="text-dark-75 text-hover-primary">Mrfocuskw</a>
                     </div>
                     <!--end::Copyright-->
                     <!--begin::Nav-->

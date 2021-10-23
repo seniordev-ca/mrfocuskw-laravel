@@ -3,37 +3,18 @@
         <div class="scrollable-content">
             <div class="vertical-centred">
                 <div class="boxed boxed-inner">
-                    <div class="vertical-title text-dark hidden-xs hidden-sm"><span>Partners</span></div>
+                    <div class="vertical-title text-dark hidden-xs hidden-sm"><span>{{ app()->getLocale() == 'en' ? $client_layout->sidebar : $client_layout->sidebar_ar }}</span></div>
                     <div class="boxed">
                         <div class="container">
                             <div class="intro overflow-hidden">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row-partners">
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/1.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/2.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/1.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/2.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/1.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/2.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/1.png"></div>
-                                            </div>
-                                            <div class="col-partner">
-                                                <div class="partner-inner"><img alt="" src="images/partners/2.png"></div>
-                                            </div>
+                                            @foreach($clients as $client)
+                                                <div class="col-partner">
+                                                    <div class="partner-inner"><img alt="{{ $client->name }}" src="{{ asset('images/clients/' . $client->image) }}"></div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
