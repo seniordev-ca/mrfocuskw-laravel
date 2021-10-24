@@ -38,8 +38,8 @@
                     <!--begin::Title-->
                     <div class="pb-5 pb-lg-15">
                         <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">{{ __('Login') }}</h3>
-                        <div class="text-muted font-weight-bold font-size-h4">New Here?
-                            <a href="custom/pages/login/login-3/signup.html" class="text-primary font-weight-bolder">{{ __('Create Account') }}</a></div>
+{{--                        <div class="text-muted font-weight-bold font-size-h4">New Here?--}}
+{{--                            <a href="custom/pages/login/login-3/signup.html" class="text-primary font-weight-bolder">{{ __('Create Account') }}</a></div>--}}
                     </div>
                     <!--begin::Title-->
                     <!--begin::Form group-->

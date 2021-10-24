@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes(['verify' => true]);
+Auth::routes([
+    'register' => false,
+    'verify' => true
+]);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['as' => 'admin.', 'middleware' => ['auth', 'verified']], function () {

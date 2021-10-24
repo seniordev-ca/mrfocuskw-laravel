@@ -24,7 +24,11 @@
     <link href="{{ asset('_admin/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('_admin/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
-{{--    <link rel="shortcut icon" href="{{ asset('_admin/media/logos/favicon.ico') }}" />--}}
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 </head>
 <!--end::Head-->
 <!--begin::Body-->
