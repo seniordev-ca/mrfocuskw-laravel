@@ -65,13 +65,16 @@
                 <a href="{{ $contact->facebook }}" class="icon ion-social-facebook"></a>
             @endif
             @if(isset($contact->google))
-                <a href="mailto:{{ $contact->google }}" class="icon ion-social-googleplus"></a>
+                <a href="mailto:{{ $contact->google }}" class="icon ion-email"></a>
             @endif
             @if(isset($contact->linkedin))
                 <a href="{{ $contact->linkedin }}" class="icon ion-social-linkedin"></a>
             @endif
-            @if(isset($contact->dribble))
-                <a href="{{ $contact->dribble }}" class="icon ion-social-dribbble-outline"></a>
+            @if(isset($contact->instagram))
+                <a href="{{ $contact->instagram }}" class="fa fa-instagram"></a>
+            @endif
+            @if(isset($contact->phone))
+                <a href="tel:{{ $contact->phone }}" class="fa fa-mobile-phone"></a>
             @endif
         </div>
         <div class="copy">© {{ $general->brand_name }} <?php echo date("Y"); ?>. All Rights Reseverd<br> Design by Mrfocuskw</div>
@@ -104,13 +107,16 @@
             <a href="{{ $contact->facebook }}" class="icon ion-social-facebook" target="_blank"></a>
         @endif
         @if(isset($contact->google))
-            <a href="mailto:{{ $contact->google }}" class="icon ion-social-googleplus"></a>
+            <a href="mailto:{{ $contact->google }}" class="icon ion-email"></a>
         @endif
         @if(isset($contact->linkedin))
             <a href="{{ $contact->linkedin }}" class="icon ion-social-linkedin" target="_blank"></a>
         @endif
-        @if(isset($contact->dribble))
-            <a href="{{ $contact->dribble }}" class="icon ion-social-dribbble-outline" target="_blank"></a>
+        @if(isset($contact->instagram))
+            <a href="{{ $contact->instagram }}" class="fa fa-instagram"></a>
+        @endif
+        @if(isset($contact->phone))
+            <a href="tel:{{ $contact->phone }}" class="fa fa-mobile-phone" target="_blank"></a>
         @endif
     </div>
 </header>

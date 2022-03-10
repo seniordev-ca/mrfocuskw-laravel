@@ -130,6 +130,23 @@
                                                        name="project_name_ar" required id="txt_title_ar" />
                                                 <div class="mb-2"></div>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                <label for="txt_description">{{ __('Description') }}
+                                                    <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="txt_description" name="description"
+                                                          placeholder="{{ __('Description') }}"
+                                                          rows="3"></textarea>
+                                                <div class="d-md-none mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="txt_description_ar">{{ __('Description(AR)') }}
+                                                    <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="txt_description_ar" name="description_ar"
+                                                          placeholder="{{ __('Description(AR)') }}"
+                                                          rows="3"></textarea>
+                                            </div>
+
                                             <div class="col-md-6">
                                                 <label for="sel_category">Category:</label>
                                                 <select class="form-control" name="category_id" id="sel_category">
@@ -139,6 +156,7 @@
                                                 </select>
                                                 <div class="mb-2"></div>
                                             </div>
+
                                             <div class="col-md-6">
                                                 <label for="txt_order">Order:</label>
                                                 <input type="number" class="form-control"
@@ -230,6 +248,21 @@
                                        placeholder="{{ __('Name (ar)') }}"
                                        name="project_name_ar" required id="txt_title_ar" />
                                 <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_description">{{ __('Description') }}
+                                    <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="txt_description" name="description"
+                                          placeholder="{{ __('Description') }}"
+                                          rows="3"></textarea>
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txt_description_ar">{{ __('Description(AR)') }}
+                                    <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="txt_description_ar" name="description_ar"
+                                          placeholder="{{ __('Description(AR)') }}"
+                                          rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="sel_category">Category:</label>

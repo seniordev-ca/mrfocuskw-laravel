@@ -16,6 +16,6 @@ class Contact extends Model
         'instagram',
         'linkedin',
         'twitter',
-        'dribble',
+        'phone',
     ];
 }

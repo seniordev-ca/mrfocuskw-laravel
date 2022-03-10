@@ -92,9 +92,9 @@
                                         </div>
                                     @endif
                                     <div class="form-group">
-                                            <label for="txt_sidebar">{{ __('Google') }}
+                                            <label for="txt_sidebar">{{ __('Email') }}
                                                 <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="{{ __('Google') }}"
+                                            <input type="text" class="form-control" placeholder="{{ __('Email') }}"
                                                    id="txt_sidebar" name="google" value="{{ $data->google }}"/>
                                             <div class="d-md-none mb-2"></div>
                                     </div>
@@ -132,10 +132,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="txt_dribble">{{ __('Dribble') }}
+                                        <label for="txt_dribble">{{ __('Phone') }}
                                             <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="{{ __('Dribble') }}"
-                                               id="txt_dribble" name="dribble" value="{{ $data->dribble }}"/>
+                                        <input type="text" class="form-control" placeholder="{{ __('Phone') }}"
+                                               id="txt_dribble" name="phone" value="{{ $data->phone }}"/>
                                         <div class="d-md-none mb-2"></div>
                                     </div>
                                 </div>

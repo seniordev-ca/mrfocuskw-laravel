@@ -20,7 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('instagram')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
-            $table->string('dribble')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }
