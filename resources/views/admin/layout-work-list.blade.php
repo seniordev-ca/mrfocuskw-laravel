@@ -369,7 +369,7 @@
                                 <div class="symbol symbol-80 d-block">
                                     <img src="" alt="Project" id="img_project" />
                                 </div>
-                                <input type="file" name="image" id="image" required/>
+                                <input type="file" name="image" id="image"/>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <input type="hidden" value="" name="id" />
