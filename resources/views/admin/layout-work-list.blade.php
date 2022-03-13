@@ -135,7 +135,7 @@
                                                 <label for="txt_description">Description
                                                     <span class="text-danger">*</span></label>
                                                 <textarea class="form-control" id="txt_description" name="description"
-                                                          placeholder="{{ __('Description') }}"
+                                                          placeholder="{{ __('Description') }}" required
                                                           rows="3"></textarea>
                                                 <div class="mb-2"></div>
                                             </div>
@@ -143,7 +143,7 @@
                                                 <label for="txt_description_ar">Description(AR)
                                                     <span class="text-danger">*</span></label>
                                                 <textarea class="form-control" id="txt_description_ar" name="description_ar"
-                                                          placeholder="{{ __('Description(AR)') }}"
+                                                          placeholder="{{ __('Description(AR)') }}" required
                                                           rows="3"></textarea>
                                                 <div class="mb-2"></div>
                                             </div>
@@ -152,14 +152,14 @@
                                                 <label for="client">Client
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="client" name="client"
-                                                       placeholder="{{ __('Client') }}">
+                                                       placeholder="{{ __('Client') }}" required>
                                                 <div class="mb-2"></div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="client_ar">Client(AR)
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="client_ar" name="client_ar"
-                                                       placeholder="{{ __('Client(AR)') }}">
+                                                       placeholder="{{ __('Client(AR)') }}" required>
                                                 <div class="mb-2"></div>
                                             </div>
 
@@ -167,20 +167,19 @@
                                                 <label for="project_type">Project Type
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="project_type" name="project_type"
-                                                       placeholder="{{ __('Project Type') }}">
+                                                       placeholder="{{ __('Project Type') }}" required>
                                                 <div class="mb-2"></div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="project_type_ar">Project Type(AR)
                                                     <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" id="project_type_ar" name="project_type_ar"
-                                                       placeholder="{{ __('Project Type(AR)') }}">
+                                                       placeholder="{{ __('Project Type(AR)') }}" required>
                                                 <div class="mb-2"></div>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="youtube">Youtube
-                                                    <span class="text-danger">*</span></label>
+                                                <label for="youtube">Youtube</label>
                                                 <input type="text" class="form-control" id="youtube" name="youtube"
                                                        placeholder="{{ __('Youtube URL') }}">
                                                 <div class="mb-2"></div>
@@ -189,13 +188,13 @@
                                                 <label for="date">Date
                                                     <span class="text-danger">*</span></label>
                                                 <input type="date" class="form-control" id="date" name="date"
-                                                       placeholder="{{ __('Project Type(AR)') }}">
+                                                       placeholder="{{ __('Project Type(AR)') }}" required>
                                                 <div class="mb-2"></div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="sel_category">Category:</label>
-                                                <select class="form-control" name="category_id" id="sel_category">
+                                                <select class="form-control" name="category_id" id="sel_category" required>
                                                     @foreach($category_list as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endforeach
@@ -207,7 +206,7 @@
                                                 <label for="txt_order">Order:</label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Order') }}"
-                                                       name="order" id="txt_order" />
+                                                       name="order" id="txt_order" required/>
                                                 <div class="mb-2"></div>
                                             </div>
                                             <div class="col-md-3">
@@ -299,7 +298,7 @@
                                 <label for="txt_description">Description
                                     <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="txt_description" name="description"
-                                          placeholder="{{ __('Description') }}"
+                                          placeholder="{{ __('Description') }}" required
                                           rows="3"></textarea>
                                 <div class="d-md-none mb-2"></div>
                             </div>
@@ -307,39 +306,38 @@
                                 <label for="txt_description_ar">Description(AR)
                                     <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="txt_description_ar" name="description_ar"
-                                          placeholder="{{ __('Description(AR)') }}"
+                                          placeholder="{{ __('Description(AR)') }}" required
                                           rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="client">Client
                                     <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="client" name="client"
-                                          placeholder="{{ __('Client') }}">
+                                          placeholder="{{ __('Client') }}" required>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
                                 <label for="client_ar">Client(AR)
                                     <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="client_ar" name="client_ar"
-                                          placeholder="{{ __('Client(AR)') }}">
+                                          placeholder="{{ __('Client(AR)') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="project_type">Project Type
                                     <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="project_type" name="project_type"
-                                       placeholder="{{ __('Project Type') }}">
+                                       placeholder="{{ __('Project Type') }}" required>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
                                 <label for="project_type_ar">Project Type(AR)
                                     <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="project_type_ar" name="project_type_ar"
-                                       placeholder="{{ __('Project Type(AR)') }}">
+                                       placeholder="{{ __('Project Type(AR)') }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="youtube">Youtube
-                                    <span class="text-danger">*</span></label>
+                                <label for="youtube">Youtube</label>
                                 <input type="text" class="form-control" id="youtube" name="youtube"
                                        placeholder="{{ __('Youtube URL') }}">
                                 <div class="d-md-none mb-2"></div>
@@ -348,11 +346,11 @@
                                 <label for="date">Date
                                     <span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="date" name="date"
-                                       placeholder="{{ __('Project Type(AR)') }}">
+                                       placeholder="{{ __('Date') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="sel_category">Category:</label>
-                                <select class="form-control" name="category_id" id="sel_category">
+                                <select class="form-control" name="category_id" id="sel_category" required>
                                     @foreach($category_list as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
@@ -363,7 +361,7 @@
                                 <label for="txt_order">Order:</label>
                                 <input type="number" class="form-control"
                                        placeholder="{{ __('Order') }}"
-                                       name="order" id="txt_order" />
+                                       name="order" id="txt_order" required/>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
@@ -371,7 +369,7 @@
                                 <div class="symbol symbol-80 d-block">
                                     <img src="" alt="Project" id="img_project" />
                                 </div>
-                                <input type="file" name="image" id="image" />
+                                <input type="file" name="image" id="image" required/>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <input type="hidden" value="" name="id" />

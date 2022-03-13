@@ -136,8 +136,14 @@ var WorkListPage = function () {
             var data = xhr.responseJSON.data;
             $("#editModal [name=project_name]").val(data.project_name);
             $("#editModal [name=project_name_ar]").val(data.project_name_ar);
-            $("#editModal [name=project_name]").val(data.project_name);
-            $("#editModal [name=project_name_ar]").val(data.project_name_ar);
+            $("#editModal [name=description]").val(data.description);
+            $("#editModal [name=description_ar]").val(data.description_ar);
+            $("#editModal [name=client]").val(data.client);
+            $("#editModal [name=client_ar]").val(data.client_ar);
+            $("#editModal [name=project_type]").val(data.project_type);
+            $("#editModal [name=project_type_ar]").val(data.project_type_ar);
+            $("#editModal [name=youtube]").val(data.youtube);
+            $("#editModal [name=date]").val(data.date);
             $("#editModal [name=order]").val((_data$order = data.order) !== null && _data$order !== void 0 ? _data$order : '');
             $("#editModal [name=category_id]").val(data.category_id);
             $("#img_project").attr("src", PUBLIC_PATH + "/images/works/" + data.image);
