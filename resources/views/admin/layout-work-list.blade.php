@@ -193,7 +193,8 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="sel_category">Category:</label>
+                                                <label for="sel_category">Category:
+                                                    <span class="text-danger">*</span></label>
                                                 <select class="form-control" name="category_id" id="sel_category" required>
                                                     @foreach($category_list as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -203,14 +204,16 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="txt_order">Order:</label>
+                                                <label for="txt_order">Order:
+                                                    <span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control"
                                                        placeholder="{{ __('Order') }}"
                                                        name="order" id="txt_order" required/>
                                                 <div class="mb-2"></div>
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="image">Image:</label>
+                                                <label for="image">Image:
+                                                    <span class="text-danger">*</span></label>
                                                 <input type="file" name="image" id="image" class="d-block" required />
                                                 <div class="d-md-none mb-2"></div>
                                             </div>
@@ -349,7 +352,8 @@
                                        placeholder="{{ __('Date') }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="sel_category">Category:</label>
+                                <label for="sel_category">Category:
+                                    <span class="text-danger">*</span></label>
                                 <select class="form-control" name="category_id" id="sel_category" required>
                                     @foreach($category_list as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -358,14 +362,16 @@
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
-                                <label for="txt_order">Order:</label>
+                                <label for="txt_order">Order:
+                                    <span class="text-danger">*</span></label>
                                 <input type="number" class="form-control"
                                        placeholder="{{ __('Order') }}"
                                        name="order" id="txt_order" required/>
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
-                                <label for="image">Image:</label>
+                                <label for="image">Image:
+                                    <span class="text-danger">*</span></label>
                                 <div class="symbol symbol-80 d-block">
                                     <img src="" alt="Project" id="img_project" />
                                 </div>
@@ -382,6 +388,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
