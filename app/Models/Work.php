@@ -14,8 +14,16 @@ class Work extends Model
         'category_id',
         'project_name',
         'project_name_ar',
+        'description',
+        'description_ar',
         'order',
         'image',
+        'youtube',
+        'date',
+        'client',
+        'client_ar',
+        'project_type',
+        'project_type_ar'
     ];
 
     public function category() {

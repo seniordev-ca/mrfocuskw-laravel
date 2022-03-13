@@ -132,19 +132,65 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label for="txt_description">{{ __('Description') }}
+                                                <label for="txt_description">Description
                                                     <span class="text-danger">*</span></label>
                                                 <textarea class="form-control" id="txt_description" name="description"
                                                           placeholder="{{ __('Description') }}"
                                                           rows="3"></textarea>
-                                                <div class="d-md-none mb-2"></div>
+                                                <div class="mb-2"></div>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="txt_description_ar">{{ __('Description(AR)') }}
+                                                <label for="txt_description_ar">Description(AR)
                                                     <span class="text-danger">*</span></label>
                                                 <textarea class="form-control" id="txt_description_ar" name="description_ar"
                                                           placeholder="{{ __('Description(AR)') }}"
                                                           rows="3"></textarea>
+                                                <div class="mb-2"></div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="client">Client
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="client" name="client"
+                                                       placeholder="{{ __('Client') }}">
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="client_ar">Client(AR)
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="client_ar" name="client_ar"
+                                                       placeholder="{{ __('Client(AR)') }}">
+                                                <div class="mb-2"></div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="project_type">Project Type
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="project_type" name="project_type"
+                                                       placeholder="{{ __('Project Type') }}">
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="project_type_ar">Project Type(AR)
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="project_type_ar" name="project_type_ar"
+                                                       placeholder="{{ __('Project Type(AR)') }}">
+                                                <div class="mb-2"></div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="youtube">Youtube
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="youtube" name="youtube"
+                                                       placeholder="{{ __('Youtube URL') }}">
+                                                <div class="mb-2"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="date">Date
+                                                    <span class="text-danger">*</span></label>
+                                                <input type="date" class="form-control" id="date" name="date"
+                                                       placeholder="{{ __('Project Type(AR)') }}">
+                                                <div class="mb-2"></div>
                                             </div>
 
                                             <div class="col-md-6">
@@ -250,7 +296,7 @@
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
-                                <label for="txt_description">{{ __('Description') }}
+                                <label for="txt_description">Description
                                     <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="txt_description" name="description"
                                           placeholder="{{ __('Description') }}"
@@ -258,11 +304,51 @@
                                 <div class="d-md-none mb-2"></div>
                             </div>
                             <div class="form-group">
-                                <label for="txt_description_ar">{{ __('Description(AR)') }}
+                                <label for="txt_description_ar">Description(AR)
                                     <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="txt_description_ar" name="description_ar"
                                           placeholder="{{ __('Description(AR)') }}"
                                           rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="client">Client
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="client" name="client"
+                                          placeholder="{{ __('Client') }}">
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="client_ar">Client(AR)
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="client_ar" name="client_ar"
+                                          placeholder="{{ __('Client(AR)') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="project_type">Project Type
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="project_type" name="project_type"
+                                       placeholder="{{ __('Project Type') }}">
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="project_type_ar">Project Type(AR)
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="project_type_ar" name="project_type_ar"
+                                       placeholder="{{ __('Project Type(AR)') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="youtube">Youtube
+                                    <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="youtube" name="youtube"
+                                       placeholder="{{ __('Youtube URL') }}">
+                                <div class="d-md-none mb-2"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date
+                                    <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="date" name="date"
+                                       placeholder="{{ __('Project Type(AR)') }}">
                             </div>
                             <div class="form-group">
                                 <label for="sel_category">Category:</label>

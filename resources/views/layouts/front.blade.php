@@ -17,6 +17,7 @@
 
     <title>{{ config('app.name', $general->brand_name) }}</title>
 
+    @yield('style')
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="screen">
 </head>
@@ -170,7 +171,7 @@
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery.pagepiling.js') }}"></script>
 
-
+@yield('script')
 
 <!-- Scripts -->
 <script src="{{ asset('js/scripts.js') }}"></script>

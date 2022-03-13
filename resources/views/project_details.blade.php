@@ -1,5 +1,14 @@
 @extends('layouts.front')
 
+@section('style')
+    <style>
+        .modal-content iframe {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+@endsection
+
 @section('content')
 <div class="page-wrapper">
     <div class="project-carousel owl-carousel">
@@ -15,13 +24,27 @@
                                         <p class="project-detail-text">{{ app()->getLocale() == 'en' ? $work->description : $work->description_ar }}</p>
                                         <ul class="project-detail-list text-dark">
                                             <li>
-                                                <span class="left">Category:</span>
-                                                <span class="right">{{ app()->getLocale() == 'en' ? $work->category->name : $work->category->name_ar }}</span>
+                                                <span class="left">Clients:</span>
+                                                <span class="right">{{ app()->getLocale() == 'en' ? $work->client : $work->category->client_ar }}</span>
                                             </li>
                                             <li>
-                                                <span class="left">Order:</span>
-                                                <span class="right">{{ $work->order }}</span>
+                                                <span class="left">Date:</span>
+                                                <span class="right">{{ $work->date }}</span>
                                             </li>
+                                            <li>
+                                                <span class="left">Project Type:</span>
+                                                <span class="right">{{ app()->getLocale() == 'en' ? $work->project_type : $work->category->project_type_ar }}</span>
+                                            </li>
+                                            @if(isset($work->youtube))
+                                            <li>
+                                                <span class="left">Video:</span>
+                                                <span class="right">
+                                                    <a href="#youtube_tag" data-toggle="modal">
+                                                        Watch Video
+                                                    </a>
+                                                </span>
+                                            </li>
+                                            @endif
                                         </ul>
                                         <div class="project-detail-meta">
                                             <span class="left text-dark hidden-xs pull-sm-left">Share:</span>
@@ -55,4 +78,33 @@
             </div>
         @endforeach
     </div>
+</div>
+
+<div id="youtube_tag" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe id="youtube_iframe" width="450" height="350"
+                        src="{{ $work->youtube }}"
+{{--                        src="{{ $work->youtube }}?autoplay=1"  Play Auto when Loading--}}
+                        frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function() {
+        var url = $("#youtube_iframe").attr('src');
+        $("#youtube_tag").on('hide.bs.modal', function() {
+            $("#youtube_iframe").attr('src', '');
+        });
+        $("#youtube_tag").on('show.bs.modal', function() {
+            $("#youtube_iframe").attr('src', url);
+        });
+    });
+</script>
 @endsection
