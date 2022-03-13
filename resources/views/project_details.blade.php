@@ -13,7 +13,7 @@
 <div class="page-wrapper">
     <div class="project-carousel owl-carousel">
         @foreach($works as $work)
-            <div class="project-carousel-item" style="background:url({{ asset('images/works/' . $work->image) }});">
+            <div class="project-carousel-item" style="background:url({{ asset('images/works/' . $work->image) }}); background-repeat: no-repeat; background-size: cover;">
                 <div>
                     <div class="inner-content">
                         <div class="container">

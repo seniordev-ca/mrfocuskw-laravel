@@ -56,9 +56,6 @@
         <li  data-menuanchor="page7">
             <a href="/#page7">{{ __('Contact') }}</a>
         </li>
-{{--        <li  data-menuanchor="project_details" style="display: none;">--}}
-{{--            <a href="#project_details">{{ __('Contact') }}</a>--}}
-{{--        </li>--}}
     </ul>
     <div class="menu-footer right-boxed">
         <div class="social-list">
@@ -95,7 +92,7 @@
         <span class="icon-bar"></span>
     </button>
 
-    <a class="brand" href="#">
+    <a class="brand" href="/">
         <img class="brand-img" alt="" src="{{ asset('images/logo/' . $general->logo) }}">
 {{--        <div class="brand-info">--}}
 {{--            <div class="brand-name">{{ $general->brand_name }}</div>--}}
