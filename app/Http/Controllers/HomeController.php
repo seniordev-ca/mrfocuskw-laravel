@@ -45,6 +45,16 @@ class HomeController extends Controller
         ]);
     }
 
+    public function projectDetails(Request $request)
+    {
+        return view('project_details')->with([
+            'general' => GeneralInfo::get()->first(),
+            'contact' => Contact::get()->first(),
+            'work_layout' => WorkLayout::get()->first(),
+            'works' => Work::orderBy('order')->with('category')->get(),
+        ]);
+    }
+
     public function contact(Request $request)
     {
         Mail::to(env('CONTACT_MAIL'))

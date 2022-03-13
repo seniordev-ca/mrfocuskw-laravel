@@ -38,23 +38,26 @@
     </div>
     <ul class="menu-list right-boxed">
         <li  data-menuanchor="page1">
-            <a  href="#page1">{{ __('Home') }}</a>
+            <a  href="/#page1">{{ __('Home') }}</a>
         </li>
         <li  data-menuanchor="page2">
-            <a href="#page2">{{ __('About us') }}</a>
+            <a href="/#page2">{{ __('About us') }}</a>
         </li>
         <li  data-menuanchor="page3">
-            <a href="#page3">{{ __('Projects') }}</a>
+            <a href="/#page3">{{ __('Projects') }}</a>
         </li>
         <li  data-menuanchor="page4">
-            <a href="#page4">{{ __('Services') }}</a>
+            <a href="/#page4">{{ __('Services') }}</a>
         </li>
         <li  data-menuanchor="page6">
-            <a href="#page6">{{ __('Reviews') }}</a>
+            <a href="/#page6">{{ __('Reviews') }}</a>
         </li>
         <li  data-menuanchor="page7">
-            <a href="#page7">{{ __('Contact') }}</a>
+            <a href="/#page7">{{ __('Contact') }}</a>
         </li>
+{{--        <li  data-menuanchor="project_details" style="display: none;">--}}
+{{--            <a href="#project_details">{{ __('Contact') }}</a>--}}
+{{--        </li>--}}
     </ul>
     <div class="menu-footer right-boxed">
         <div class="social-list">

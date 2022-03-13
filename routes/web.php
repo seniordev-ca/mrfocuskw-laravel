@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/project-details', [App\Http\Controllers\HomeController::class, 'projectDetails']);
 
 Route::get('locale/{locale?}', [App\Http\Controllers\LocaleController::class, 'setLocale'])->name('set-locale');
 Route::post('contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');

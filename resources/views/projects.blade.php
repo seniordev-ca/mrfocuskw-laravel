@@ -27,7 +27,7 @@
                                                 </div>
                                             @endforeach
                                         </div>
-{{--                                        <a href="#" class="h5 link-arrow text-white">view all projects <i class="icon icon-chevron-right"></i></a>--}}
+                                        <a href="/project-details" class="h5 link-arrow text-white">view all projects <i class="icon icon-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -38,3 +38,4 @@
         </div>
     </div>
 </div>
+
