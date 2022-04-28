@@ -44,7 +44,24 @@ class HomeController extends Controller
             'reviews' => Review::orderBy('order')->get()
         ]);
     }
-
+    public function frontpage_1()
+    {
+        return view('welcome_1')->with([
+            'general' => GeneralInfo::get()->first(),
+            'contact' => Contact::get()->first(),
+            'home' => Home::get()->first(),
+            'about' => AboutUs::get()->first(),
+            'skills' => Skill::orderBy('order')->get(),
+            'work_layout' => WorkLayout::get()->first(),
+            'works' => Work::orderBy('order')->with('category')->get(),
+            'service_layout' => ServiceLayout::get()->first(),
+            'services' => Service::orderBy('order')->get(),
+            'client_layout' => ClientLayout::get()->first(),
+            'clients' => Client::orderBy('order')->get(),
+            'review_layout' => ReviewLayout::get()->first(),
+            'reviews' => Review::orderBy('order')->get()
+        ]);
+    }
     public function projectDetails(Request $request)
     {
         return view('project_details')->with([

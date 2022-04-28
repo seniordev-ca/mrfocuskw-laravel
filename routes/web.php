@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/frontpage_1', [App\Http\Controllers\HomeController::class, 'frontpage_1']);
+Route::get('/frontpage', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/project-details', [App\Http\Controllers\HomeController::class, 'projectDetails']);
 
 Route::get('locale/{locale?}', [App\Http\Controllers\LocaleController::class, 'setLocale'])->name('set-locale');
