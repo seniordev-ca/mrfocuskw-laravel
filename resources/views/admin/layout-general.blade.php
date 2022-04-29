@@ -118,13 +118,59 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="file_about">{{ __('About BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="About" src="{{ asset('images/bg/' . $data->about_bg) }}" />
+                                        </div>
+                                        <input type="file" name="about_bg" id="file_about" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="file_work">{{ __('Work BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Work" src="{{ asset('images/bg/' . $data->work_bg) }}" />
+                                        </div>
+                                        <input type="file" name="work_bg" id="file_work" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="file_service">{{ __('Service BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Service" src="{{ asset('images/bg/' . $data->service_bg) }}" />
+                                        </div>
+                                        <input type="file" name="service_bg" id="file_service" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="file_client">{{ __('Client BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Client" src="{{ asset('images/bg/' . $data->client_bg) }}" />
+                                        </div>
+                                        <input type="file" name="client_bg" id="file_client" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="file_review">{{ __('Review BG Image') }}</label>
                                         <div class="symbol symbol-80 d-block">
-                                            <img alt="Project" src="{{ asset('images/bg/' . $data->review_bg) }}" />
+                                            <img alt="Review" src="{{ asset('images/bg/' . $data->review_bg) }}" />
                                         </div>
                                         <input type="file" name="review_bg" id="file_review" class="d-block" />
                                         <div class="d-md-none mb-2"></div>
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="file_contact">{{ __('Contact BG Image') }}</label>
+                                        <div class="symbol symbol-80 d-block">
+                                            <img alt="Contact" src="{{ asset('images/bg/' . $data->contact_bg) }}" />
+                                        </div>
+                                        <input type="file" name="contact_bg" id="file_contact" class="d-block" />
+                                        <div class="d-md-none mb-2"></div>
+                                    </div>
+
                                 </div>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

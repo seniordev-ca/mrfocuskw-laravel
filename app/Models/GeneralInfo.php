@@ -14,6 +14,11 @@ class GeneralInfo extends Model
         'logo',
         'brand_name',
         'home_bg',
-        'review_bg'
+        'about_bg',
+        'work_bg',
+        'service_bg',
+        'client_bg',
+        'review_bg',
+        'contact_bg',
     ];
 }

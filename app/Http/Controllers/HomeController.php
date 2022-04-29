@@ -16,6 +16,7 @@ use App\Models\ServiceLayout;
 use App\Models\Skill;
 use App\Models\Work;
 use App\Models\WorkLayout;
+use App\Models\WorkCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -47,6 +48,7 @@ class HomeController extends Controller
     public function frontpage_1()
     {
         return view('welcome_1')->with([
+            'categories' => WorkCategory::orderBy('order')->get(),
             'general' => GeneralInfo::get()->first(),
             'contact' => Contact::get()->first(),
             'home' => Home::get()->first(),
